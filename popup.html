@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <img src="icon.png" alt="Logo" class="logo">
+    <h3>左键打开新标签页</h3>
+  </div>
+
+  <div class="content">
+    <div class="control-group">
+      <span class="label">网页链接在新标签页打开</span>
+      <label class="switch">
+        <input type="checkbox" id="p_enableLinks">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="control-group">
+      <span class="label">视频/SPA 增强模式</span>
+      <label class="switch">
+        <input type="checkbox" id="p_enableVideo">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="control-group">
+      <span class="label">收藏夹在新标签页打开</span>
+      <label class="switch">
+        <input type="checkbox" id="p_enableBookmarks">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="control-group">
+      <span class="label">立即切换到新标签页</span>
+      <label class="switch">
+        <input type="checkbox" id="p_activeInForeground">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="footer">
+    <button id="openFullSettings">⚙️ 打开高级设置 </button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

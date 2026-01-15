@@ -1,0 +1,95 @@
+:root {
+  --primary: #2196F3;
+  --warning: #ffbe0b; /* 黄色编辑 */
+  --danger: #ff4757;  /* 红色删除 */
+  --bg: #f4f7f6;
+  --card: #ffffff;
+  --text: #333;
+  --border: #e1e1e1;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.container { width: 100%; max-width: 700px; }
+
+header { display: flex; flex-direction: column; align-items: center; margin-bottom: 30px; }
+.title-area { display: flex; align-items: center; gap: 10px; }
+.logo { width: 32px; height: 32px; }
+header h1 { margin: 0; font-size: 24px; }
+header .version { font-size: 12px; background: var(--primary); color: white; padding: 2px 6px; border-radius: 4px; vertical-align: middle;}
+header p { color: #888; margin-top: 5px; font-size: 14px; }
+
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  margin-bottom: 20px;
+}
+
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+h2 { font-size: 16px; margin: 0; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
+
+.setting-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+
+.switch { position: relative; display: inline-block; width: 44px; height: 24px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .3s; border-radius: 34px; }
+.slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .3s; border-radius: 50%; }
+input:checked + .slider { background-color: var(--primary); }
+input:checked + .slider:before { transform: translateX(20px); }
+
+/* 输入框区域 */
+.add-rule-box {
+  display: flex; gap: 10px; margin-bottom: 20px;
+  background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px solid var(--border);
+}
+.add-rule-box input {
+  flex: 1; padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; outline: none;
+}
+.add-rule-box button {
+  background: var(--primary); color: white; border: none; padding: 0 15px; border-radius: 6px; cursor: pointer; font-weight: bold; white-space: nowrap;
+}
+.add-rule-box button:hover { opacity: 0.9; }
+
+/* 列表样式 */
+.rules-list { display: flex; flex-direction: column; gap: 10px; }
+.rule-item {
+  display: flex; align-items: center; justify-content: space-between;
+  background: white; border: 1px solid var(--border); padding: 10px 15px; border-radius: 8px;
+  transition: transform 0.2s;
+}
+.rule-item:hover { border-color: var(--primary); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+
+.rule-info { flex: 1; display: flex; flex-direction: column; }
+.rule-domain { font-weight: bold; font-size: 14px; }
+.rule-keyword { font-size: 12px; color: #666; font-family: monospace; background: #eee; padding: 2px 6px; border-radius: 4px; display: inline-block; margin-top: 4px; width: fit-content;}
+
+/* 按钮组 */
+.action-group { display: flex; align-items: center; gap: 8px; }
+
+/* 编辑按钮 (黄色) */
+.edit-btn {
+  background: var(--warning); color: #fff; border: none; 
+  padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold;
+}
+.edit-btn:hover { background: #e0a800; }
+
+/* 删除按钮 (红色) */
+.delete-btn {
+  background: var(--danger); color: white; border: none; 
+  padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold;
+}
+.delete-btn:hover { background: #e63e4d; }
+
+.footer { text-align: right; margin-top: 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
+.primary-btn { background: var(--primary); color: white; border: none; padding: 12px 30px; border-radius: 30px; font-size: 16px; cursor: pointer; box-shadow: 0 4px 6px rgba(33, 150, 243, 0.3); transition: transform 0.1s;}
+.primary-btn:active { transform: scale(0.98); }
+#status { color: #4CAF50; opacity: 0; transition: opacity 0.5s; }

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>插件设置</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="title-area">
+        <img src="icon.png" class="logo" alt="logo">
+        <h1>左键打开新标签页 <span class="version">Pro</span></h1>
+      </div>
+      <p>让浏览器完全听你的话</p>
+    </header>
+
+    <div class="card">
+      <h2>通用开关</h2>
+      <div class="setting-item">
+        <label for="enableLinks">网页普通链接在新标签页打开</label>
+        <label class="switch">
+          <input type="checkbox" id="enableLinks">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="setting-item">
+        <label for="enableBookmarks">收藏夹在新标签页打开</label>
+        <label class="switch">
+          <input type="checkbox" id="enableBookmarks">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="card full-width">
+      <div class="card-header">
+        <h2>🎥 视频/SPA 增强规则</h2>
+        <label class="switch">
+          <input type="checkbox" id="enableVideo">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      
+      <p class="desc-text">针对单页应用（如 YouTube、B站）强制新标签页打开。</p>
+
+      <div class="add-rule-box">
+        <input type="text" id="newDomain" placeholder="域名 (如 bilibili.com)">
+        <input type="text" id="newKeyword" placeholder="路径关键词 (如 /video/)">
+        <button id="addRuleBtn">➕ 添加规则</button>
+      </div>
+
+      <div id="rulesList" class="rules-list"></div>
+    </div>
+
+    <div class="card full-width">
+      <div class="card-header">
+        <h2>🚫 白名单 (禁用插件)</h2>
+      </div>
+      <p class="desc-text">在以下域名中，插件将完全停止工作。</p>
+      
+      <div class="add-rule-box">
+        <input type="text" id="newWhiteDomain" placeholder="输入域名 (例如: google.com)" style="flex: 2;">
+        <button id="addWhiteBtn">➕ 添加域名</button>
+      </div>
+
+      <div id="whitelistList" class="rules-list"></div>
+    </div>
+
+    <div class="footer">
+      <button id="saveBtn" class="primary-btn">💾 保存所有设置</button>
+      <span id="status"></span>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
